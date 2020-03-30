@@ -27,7 +27,7 @@ class ProjectTask (models.Model):
         return action
 
     def action_view_tickets(self):
-        action = self.env.ref("helpdesk_mgmt.ticket_view_form").read()[0]
+        action = self.env.ref("helpdesk_mgmt.ticket_view_tree").read()[0]
         action['context'] = {
             'default_project_id': self.project_id and self.project_id.id
         }
